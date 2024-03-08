@@ -1,8 +1,8 @@
-
-
-
 import 'package:flutter/material.dart';
-import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/payment_method_list_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment_progect/featchers/checkout/data/repositry/checkout_repo_impl.dart';
+import 'package:payment_progect/featchers/checkout/presentataion/manger/checkout_cubit.dart';
+import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/payment_method_button_sheet.dart';
 import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/total_price.dart';
 import 'package:payment_progect/generated/assets.dart';
 
@@ -63,37 +63,15 @@ class MyCartViewBody extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)),
                   builder: (context) {
-                    return const PaymentMethodsBottomSheet();
+                    return BlocProvider(
+                        create: (context) => CheckoutCubit(CheckoutRepoImpl()),
+                        child: const PaymentMethodsBottomSheet());
                   });
             },
           ),
           const SizedBox(
             height: 12,
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class PaymentMethodsBottomSheet extends StatelessWidget {
-  const PaymentMethodsBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            height: 16,
-          ),
-          PaymentMethodsListView(),
-          SizedBox(
-            height: 32,
-          ),
-          CustomButton(text: 'Continue'),
         ],
       ),
     );

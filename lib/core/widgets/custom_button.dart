@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import '../utils/styls.dart';
 
@@ -32,10 +30,10 @@ class CustomButton extends StatelessWidget {
           child: isLoading
               ? const CircularProgressIndicator()
               : Text(
-            text,
-            textAlign: TextAlign.center,
-            style: Styles.style22,
-          ),
+                  text,
+                  textAlign: TextAlign.center,
+                  style: Styles.style22,
+                ),
         ),
       ),
     );

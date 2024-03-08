@@ -1,8 +1,3 @@
-
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/payment_details_view_body.dart';
 
@@ -19,5 +14,3 @@ class PaymentDetailsView extends StatelessWidget {
     );
   }
 }
-
-

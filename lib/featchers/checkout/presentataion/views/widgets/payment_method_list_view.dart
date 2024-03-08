@@ -1,11 +1,14 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment_progect/featchers/checkout/presentataion/manger/checkout_cubit.dart';
+import 'package:payment_progect/featchers/checkout/presentataion/manger/checkout_cubit.dart';
 import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/payment_method_item.dart';
 import 'package:payment_progect/generated/assets.dart';
 
 class PaymentMethodsListView extends StatefulWidget {
-  const PaymentMethodsListView({super.key,});
+  const PaymentMethodsListView({
+    super.key,
+  });
 
   @override
   State<PaymentMethodsListView> createState() => _PaymentMethodsListViewState();
@@ -17,7 +20,6 @@ class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
     Assets.imagesPaypal,
   ];
 
-  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -28,15 +30,18 @@ class _PaymentMethodsListViewState extends State<PaymentMethodsListView> {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: GestureDetector(
-                onTap: () {
-                  activeIndex = index;
-                  setState(() {});
+              child: BlocBuilder<CheckoutCubit, CheckoutState>(
+                builder: (context, state) {
+                  return GestureDetector(
+                    onTap: () {
+                      BlocProvider.of<CheckoutCubit>(context).changeIndex(index);
+                    },
+                    child: PaymentMethodItem(
+                      isActive: BlocProvider.of<CheckoutCubit>(context).activeIndex == index,
+                      image: paymentMethodsItems[index],
+                    ),
+                  );
                 },
-                child: PaymentMethodItem(
-                  isActive: activeIndex == index,
-                  image: paymentMethodsItems[index],
-                ),
               ),
             );
           }),

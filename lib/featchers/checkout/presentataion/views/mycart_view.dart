@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/mycart_view_body.dart';
 
@@ -10,7 +8,7 @@ class MyCartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: buildAppBar(title: 'My Cart'),
       body: const MyCartViewBody(),
     );

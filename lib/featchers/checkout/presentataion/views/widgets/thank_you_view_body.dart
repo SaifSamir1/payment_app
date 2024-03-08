@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/thank_you_card.dart';
 

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
@@ -46,8 +44,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
               showBackView = carditCardModel.isCvvFocused;
               setState(() {});
             },
-            formKey: widget.formKey
-        ),
+            formKey: widget.formKey),
       ],
     );
   }

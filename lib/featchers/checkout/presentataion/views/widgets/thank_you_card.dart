@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:payment_progect/featchers/checkout/presentataion/views/widgets/payment_item_info.dart';

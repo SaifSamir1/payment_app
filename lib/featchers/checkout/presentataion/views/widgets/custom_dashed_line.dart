@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 
 class CustomDashedLine extends StatelessWidget {
@@ -13,7 +10,7 @@ class CustomDashedLine extends StatelessWidget {
     return Row(
       children: List.generate(
         30,
-            (index) => Expanded(
+        (index) => Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2),
             child: Container(
